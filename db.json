@@ -1,0 +1,96 @@
+{
+  "clientes": [
+    {
+      "id": "1",
+      "name": "Gustavo Xavier",
+      "carteiraHash": "0xf37A43ddf31285E068f1CCaF11F3bA646D6a3d75"
+    },
+    {
+      "id": "2",
+      "name": "DanielMoliari",
+      "carteiraHash": "0xf37A43ddf31285E068f1CCaF11F3bA646D6a3d75"
+    },
+    {
+      "id": "3",
+      "name": "João",
+      "carteiraHash": "0xf37A43ddf31285E068f1CCaF11F3bA646D6a3d75"
+    }
+  ],
+  "freelancer": { "id": "1", "name": "Daniel Moliari", "hash": "" },
+
+  "projetos": [
+    {
+      "id": 1,
+      "clienteId": 1,
+      "titulo": "Desenvolvimento de Site Corporativo",
+      "descricao": "Desenvolvimento de um site corporativo responsivo utilizando tecnologias modernas.",
+      "categoria": "Desenvolvimento Web",
+      "propostas": [
+        {
+          "id": 1,
+          "tempo": "2 semanas",
+          "valor": 1500,
+          "freelancerHash": "0x123456789abcdef"
+        },
+        {
+          "id": 2,
+          "tempo": "3 semanas",
+          "valor": 2000,
+          "freelancerHash": "0xabcdef123456789"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "clienteId": 2,
+      "titulo": "Design de Logo e Identidade Visual",
+      "descricao": "Criação de uma logo e identidade visual para uma nova marca.",
+      "categoria": "Design Gráfico",
+      "propostas": []
+    },
+    {
+      "id": 3,
+      "clienteId": 1,
+      "titulo": "Desenvolvimento de Aplicativo Mobile",
+      "descricao": "Desenvolvimento de um aplicativo mobile para Android e iOS.",
+      "categoria": "Desenvolvimento Mobile",
+      "propostas": [
+        {
+          "id": 3,
+          "tempo": "4 semanas",
+          "valor": 3000,
+          "freelancerHash": "0x9876543210fedcba"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "clienteId": 3,
+      "titulo": "Redação de Conteúdo para Blog",
+      "descricao": "Redação de artigos para um blog corporativo sobre diversos temas.",
+      "categoria": "Redação",
+      "propostas": [
+        {
+          "id": 4,
+          "tempo": "1 mês",
+          "valor": 800,
+          "freelancerHash": "0xfedcba987654321"
+        },
+        {
+          "id": 5,
+          "tempo": "2 meses",
+          "valor": 1500,
+          "freelancerHash": "0xabcdef012345678"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "clienteId": 2,
+      "titulo": "Consultoria em Marketing Digital",
+      "descricao": "Consultoria em marketing digital para melhorar a presença online da empresa.",
+      "categoria": "Marketing Digital",
+      "propostas": []
+    }
+  ]
+}
