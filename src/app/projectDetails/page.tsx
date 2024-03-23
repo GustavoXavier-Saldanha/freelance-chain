@@ -24,7 +24,7 @@ export default function Projetos() {
   const [projetos, setProjetos] = useState<Projeto[]>([]);
   const router = useRouter();
 
-  const clienteId = 3; // Exemplo de ID do cliente logado
+  const clienteId = 1; // Exemplo de ID do cliente logado
 
   useEffect(() => {
     const carregarProjetos = async () => {

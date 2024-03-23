@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import { ethers } from "ethers";
+import ContratoFreelancer from "../../contracts/ContratoFreelancer.sol";
 
 interface Projeto {
   id: number;
@@ -52,6 +54,30 @@ export default function ProjectsDetail({
     }
   }, [id]);
   console.log(projeto && projeto);
+
+  const finalizarContrato = async () => {
+    try {
+      // Conecte-se a uma carteira Ethereum
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      await window.ethereum.enable(); // Solicite permissão ao usuário para conectar a carteira
+
+      // Obtenha a instância do contrato inteligente
+      const contrato = new ethers.Contract(
+        ContratoFreelancer.address,
+        ContratoFreelancer.abi,
+        provider.getSigner()
+      );
+
+      // Chame a função finalizarContrato no contrato
+      const tx = await contrato.finalizarContrato();
+      await tx.wait(); // Aguarde a transação ser confirmada
+
+      console.log("Contrato finalizado com sucesso!");
+    } catch (error) {
+      console.error("Erro ao finalizar contrato:", error);
+    }
+  };
+
   return (
     <div>
       {projeto ? (
@@ -71,7 +97,12 @@ export default function ProjectsDetail({
                     <p>Tempo Estimado: {proposta.tempo}</p>
                     <p>Valor: ${proposta.valor}</p>
                     <p>Freelancer Hash: {proposta.freelancerHash}</p>
-
+                    <button
+                      onClick={() =>
+                        finalizarContrato(proposta.freelancerHash)
+                      }>
+                      Finalizar Contrato
+                    </button>
                     {/* Adicione aqui detalhes adicionais sobre a proposta, se necessário */}
                   </li>
                   <br />
